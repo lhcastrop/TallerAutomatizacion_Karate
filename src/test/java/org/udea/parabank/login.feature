@@ -1,4 +1,4 @@
-@parabank_login
+@appcontact_login
 Feature: Login to app contact
 
   Background:
@@ -7,7 +7,7 @@ Feature: Login to app contact
 
   Scenario: Customer Login
     Given path '/users/login'
-    And request {"email": "pruebaleo@hotmail.com","password": "12345678"} 
+    And request {"email": "pruebasudea@test.com","password": "12345678"}
     When method POST
     Then status 200
     And match response ==
@@ -18,8 +18,8 @@ Feature: Login to app contact
         "firstName": '#string',
         "lastName": '#string',
         "email": '#string',
-        "__v": '#number'
-      },
-        "token": '#string'
+        "__v": '#number',
+    },
+    "token": '#string',
     }
     """
