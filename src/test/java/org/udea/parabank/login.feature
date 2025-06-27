@@ -2,7 +2,7 @@
 Feature: Login to app contact
 
   Background:
-    * url baseUrl
+    * url baseUrl   
     * header Accept = 'application/json'
 
   Scenario: Customer Login
