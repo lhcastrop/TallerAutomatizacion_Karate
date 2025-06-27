@@ -1,5 +1,5 @@
-@appcontact_login
-Feature: Login to app contact
+@appcontact_CreateContact
+Feature: Create contact to app contact
 
   Background:
     * url baseUrl
