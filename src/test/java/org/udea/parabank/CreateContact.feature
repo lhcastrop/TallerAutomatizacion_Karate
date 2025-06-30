@@ -1,4 +1,3 @@
-@appcontact_createcontact
 Feature: create contact to app contact
 
   Background:
@@ -14,7 +13,7 @@ Feature: create contact to app contact
 
     Given path '/contacts'
     And header Authorization = 'Bearer ' + authToken
-    And request { "firstName": "Claret", "lastName": "Sepulveda", "birthdate": "1970-01-01", "email": test@hotmail.com, "phone": "8005555555", "street1": "1 Main St.", "street2": "Apartment A", "city": "Anytown", "stateProvince": "KS", "postalCode": "12345", "country": "USA" }
+    And request { "firstName": "Claret", "lastName": "Sepulveda", "birthdate": "1970-01-01", "email": "testcontact@hotmail.com", "phone": "8005555555", "street1": "1 Main St.", "street2": "Apartment A", "city": "Anytown", "stateProvince": "KS", "postalCode": "12345", "country": "USA" }
     When method POST
     Then status 201
 
@@ -22,7 +21,7 @@ Feature: create contact to app contact
     And header Authorization = 'Bearer ' + authToken
     When method GET
     Then status 200
-    And match response..email contains email
+    And match response..email contains "testcontact@hotmail.com"
 
   Scenario: Crear contacto con campos faltantes
     Given path '/users/login'
@@ -37,5 +36,3 @@ Feature: create contact to app contact
     When method POST
     Then status 400
 
-    When method POST
-    Then status 400
