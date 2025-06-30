@@ -17,5 +17,4 @@ class TestRunner {
                 .relativeTo(getClass())
                 .outputCucumberJson(true);
     }
-
 }
