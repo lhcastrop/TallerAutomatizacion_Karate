@@ -16,7 +16,7 @@ Feature: Login to app contact
     Given path '/contacts'
     And header Authorization = 'Bearer ' + authToken
     When method GET
-    Then status 200
+    Then status 200 
 
   Scenario: Login con credenciales inválidas
     Given path '/users/login'
