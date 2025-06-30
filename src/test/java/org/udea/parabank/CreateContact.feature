@@ -6,14 +6,12 @@ Feature: create contact to app contact
     * header Accept = 'application/json'
 
   Scenario: Login, crear contacto y validar existencia
-    # Login
     Given path '/users/login'
     And request { "email": "pruebasleo@hotmail.com", "password": "12345678" }
     When method POST
     Then status 200
     * def authToken = response.token
 
-    # Crear contacto
     * def uniqueEmail = 'user' + java.util.UUID.randomUUID() + '@hotmail.com'
     Given path '/contacts'
     And header Authorization = 'Bearer ' + authToken
@@ -21,12 +19,11 @@ Feature: create contact to app contact
     When method POST
     Then status 201
 
-    # Validar que el contacto aparece en la lista
     Given path '/contacts'
     And header Authorization = 'Bearer ' + authToken
     When method GET
     Then status 200
-    And match response[*].email contains uniqueEmail
+    And match response..email contains uniqueEmail
 
   Scenario: Crear contacto con campos faltantes
     Given path '/users/login'
