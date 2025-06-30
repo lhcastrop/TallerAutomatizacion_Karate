@@ -1,6 +1,6 @@
 @appcontact_login
 Feature: Login to app contact
-
+ 
   Background:
     * url baseUrl   
     * header Accept = 'application/json'
