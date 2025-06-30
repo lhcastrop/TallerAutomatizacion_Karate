@@ -9,7 +9,7 @@ Feature: Login to app contact
     Given path '/users/login'
     And request { "email": "pruebasleo@hotmail.com", "password": "12345678" }
     When method POST
-    Then status 200
+    Then status 200  
     And match response.token == '#string'
     And def authToken = response.token
 
