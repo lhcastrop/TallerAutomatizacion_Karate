@@ -3,7 +3,7 @@ Feature: create contact to app contact
   Background:
     * url baseUrl
     * header Accept = 'application/json'
- 
+  
   Scenario: Login, crear contacto y validar existencia
     Given path '/users/login'
     And request { "email": "pruebasleo@hotmail.com", "password": "12345678" }
