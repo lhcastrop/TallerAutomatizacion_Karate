@@ -12,7 +12,7 @@ Feature: Login to app contact
     Then status 200
     And match response.token == '#present'
     And def authToken = response.token
- 
+  
     Given path '/contacts'
     And header Authorization = 'Bearer ' + authToken
     When method GET
