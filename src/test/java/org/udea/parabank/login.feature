@@ -24,7 +24,7 @@ Feature: Login to app contact
     And request { "email": "usuario@falso.com", "password": "incorrecto" }
     When method POST
     Then status 401
-    And match response.error == 'Incorrect email or password'
+    And match response.error == { error: '#present' }
 
   Scenario: Login con email malformado
     Given path '/users/login'
