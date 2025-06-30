@@ -10,7 +10,7 @@ Feature: create contact to app contact
     When method POST
     Then status 200
     * def authToken = response.token
-
+ 
     * def randomEmail = 'testcontact' + java.util.UUID.randomUUID() + '@hotmail.com'
     Given path '/contacts'
     And header Authorization = 'Bearer ' + authToken
